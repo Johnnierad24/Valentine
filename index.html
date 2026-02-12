@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Luna Bella 💕</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Floating Hearts Animation -->
+    <div class="hearts-container" id="heartsContainer"></div>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#proposal" class="nav-link">The Question</a>
+            <a href="#countdown" class="nav-link">Countdown</a>
+            <a href="#gallery" class="nav-link">Memories</a>
+            <a href="#message" class="nav-link">Letter</a>
+        </div>
+    </nav>
+
+    <!-- Music Player -->
+    <div class="music-player" id="musicPlayer">
+        <button class="music-toggle" id="musicToggle">
+            <span class="music-icon">🎵</span>
+            <span class="music-text">Play Our Song</span>
+        </button>
+    </div>
+
+    <!-- Landing Section -->
+    <section id="home" class="landing-section">
+        <div class="landing-content">
+            <h1 class="main-title animate-fade-in">
+                For My<br>
+                <span class="highlight">Luna Bella</span>
+            </h1>
+            <p class="subtitle animate-fade-in-delay">Something special from Bubba 💕</p>
+            <button class="scroll-btn" onclick="scrollToSection('proposal')">
+                <span>Click to continue</span>
+                <span class="arrow">↓</span>
+            </button>
+        </div>
+        <div class="sparkles"></div>
+    </section>
+
+    <!-- Proposal Section -->
+    <section id="proposal" class="proposal-section">
+        <div class="proposal-container">
+            <div class="proposal-image-wrapper">
+                <img src="images/photo1.jpg" alt="Luna Bella" class="proposal-image">
+                <div class="image-glow"></div>
+            </div>
+            <div class="proposal-content">
+                <h2 class="proposal-title">Will You Be My Valentine?</h2>
+                <p class="proposal-text">Luna Bella, from the moment you came into my life, everything changed. Your smile lights up my world, and your presence makes every day special.</p>
+                <div class="proposal-buttons">
+                    <button class="btn-yes" onclick="handleYes()">Yes! 💕</button>
+                    <button class="btn-no" onclick="handleNo()" id="btnNo">Maybe Later</button>
+                </div>
+                <div class="response-message" id="responseMessage"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countdown Section -->
+    <section id="countdown" class="countdown-section">
+        <div class="countdown-container">
+            <h2 class="section-title">Countdown to Valentine's Day</h2>
+            <div class="countdown-timer">
+                <div class="time-box">
+                    <span class="time-value" id="days">00</span>
+                    <span class="time-label">Days</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-value" id="hours">00</span>
+                    <span class="time-label">Hours</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-value" id="minutes">00</span>
+                    <span class="time-label">Minutes</span>
+                </div>
+                <div class="time-box">
+                    <span class="time-value" id="seconds">00</span>
+                    <span class="time-label">Seconds</span>
+                </div>
+            </div>
+            <p class="countdown-message">Until our special day! 💖</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="gallery-container">
+            <h2 class="section-title">Our Beautiful Memories</h2>
+            <p class="section-subtitle">Every picture tells our story 📸</p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="images/photo1.jpg" alt="Memory 1">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💕</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="images/photo2.jpg" alt="Memory 2">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💕</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="images/photo3.jpg" alt="Memory 3">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💕</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="images/photo4.jpg" alt="Memory 4">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💕</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="images/photo5.jpg" alt="Memory 5">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💕</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="images/photo6.jpg" alt="Memory 6">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💕</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(6)">
+                    <img src="images/photo7.jpg" alt="Memory 7">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💕</span>
+                    </div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(7)">
+                    <img src="images/photo8.jpg" alt="Memory 8">
+                    <div class="gallery-overlay">
+                        <span class="gallery-icon">💕</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <button class="lightbox-nav prev" onclick="changeImage(-1)">❮</button>
+        <img class="lightbox-image" id="lightboxImage" src="" alt="">
+        <button class="lightbox-nav next" onclick="changeImage(1)">❯</button>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+    <!-- Message Section -->
+    <section id="message" class="message-section">
+        <div class="message-container">
+            <h2 class="section-title">A Letter From My Heart</h2>
+            <div class="letter-content">
+                <p class="letter-greeting">My Dearest Luna Bella,</p>
+                
+                <p class="letter-text">
+                    As I sit here writing this, my heart is full of love and gratitude for having you in my life. You are the light that brightens my darkest days, and the reason I smile without even realizing it.
+                </p>
+                
+                <p class="letter-text">
+                    I know I may not be rich enough to take you somewhere fancy or give you all the luxury you deserve right now, but I want you to know that I'm working hard every single day. I'm still figuring things out, grinding, learning, and building something better for us.
+                </p>
+                
+                <p class="letter-text">
+                    Soon, babe, soon I'll be able to give you everything you deserve and more. All I ask is that you keep praying for your Bubba as I navigate this journey. Your support and love mean everything to me, and they fuel my determination to succeed.
+                </p>
+                
+                <p class="letter-text">
+                    Every step I take, every challenge I face, I do it with you in my heart. You inspire me to be better, to dream bigger, and to never give up. This Valentine's Day might be simple, but my love for you is anything but.
+                </p>
+                
+                <p class="letter-text">
+                    Thank you for being patient with me, for believing in me, and for loving me through this season of growth. I promise you, our best days are still ahead of us.
+                </p>
+                
+                <p class="letter-closing">
+                    Forever yours,<br>
+                    <span class="signature">John Gachara (Bubba)</span> 💕
+                </p>
+                
+                <div class="letter-decoration">
+                    <span class="heart">💖</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">Made with 💕 by Bubba for Luna Bella</p>
+            <p class="footer-date">Valentine's Day 2026</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
